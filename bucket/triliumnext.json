@@ -6,8 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/TriliumNext/Notes/releases/download/v0.91.6/TriliumNextNotes-v0.91.6-windows-x64.zip",
-            "hash": "e098b07dcb4e4548bc2ab5524ca933e04d8d79cc66bc054010c5054b52ad2733",
-            "extract_dir": "trilium-windows-x64"
+            "hash": "e098b07dcb4e4548bc2ab5524ca933e04d8d79cc66bc054010c5054b52ad2733"
         }
     },
     "shortcuts": [
