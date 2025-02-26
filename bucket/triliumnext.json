@@ -1,0 +1,39 @@
+{
+    "version": "0.91.6",
+    "description": "Build your personal knowledge base with TriliumNext Notes",
+    "homepage": "https://github.com/TriliumNext/Notes",
+    "license": "AGPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/TriliumNext/Notes/releases/download/v0.91.6/TriliumNextNotes-v0.91.6-windows-x64.zip",
+            "hash": "1019333a83c6fbf26d79746134c1c0080d1094c0a4e6bb326a1c18b0726917a0",
+            "extract_dir": "triliumnext-windows-x64"
+        }
+    },
+    "shortcuts": [
+        [
+            "trilium.exe",
+            "TriliumNext Notes"
+        ]
+    ],
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\triliumnext-data\") -and (Test-Path \"$env:APPDATA\\trilium-data\")) {",
+        "    info \"Copying old '$env:APPDATA\\trilium-data' to '$persist_dir\\triliumnext-data'\"",
+        "    ensure \"$persist_dir\\triliumnext-data\" | Out-Null",
+        "    Copy-Item \"$env:APPDATA\\trilium-data\\*\" \"$persist_dir\\triliumnext-data\" -Recurse -Force",
+        "}"
+    ],
+    "env_set": {
+        "TRILIUM_DATA_DIR": "$persist_dir\\triliumnext-data"
+    },
+    "persist": "triliumnext-data",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/TriliumNext/Notes/releases/download/v$version/TriliumNextNotes-v$version-windows-x64.zip"
+                        
+            }
+        }
+    }
+}
